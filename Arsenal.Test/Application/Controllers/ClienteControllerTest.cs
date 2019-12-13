@@ -5,6 +5,7 @@ using System.Net;
 using Newtonsoft.Json;
 using System.Text;
 using Arsenal.Application.Models;
+using System;
 
 namespace Arsenal.Test.Application.Controllers
 {
@@ -42,6 +43,10 @@ namespace Arsenal.Test.Application.Controllers
       clienteAtualizado.NomeCompleto
         .Should()
         .NotBe(string.Empty);
+
+      Console.WriteLine(clienteAtualizado.NomeCompleto);
+
+      Console.ReadKey();
 
       clienteAtualizado.Negativado
         .Should()

@@ -14,11 +14,8 @@ namespace Arsenal.Application.Automapper
       {
         config.CreateMap<ClienteEntity, ClienteModel>()
           .ForMember(dest => dest.NomeCompleto, options =>
-            options.MapFrom(src => src.PrimeiroNome)).ReverseMap();
-
-        config.CreateMap<ClienteEntity, ClienteModel>()
-          .ForMember(dest => dest.NomeCompleto, options =>
-            options.MapFrom(src => src.UltimoNome)).ReverseMap();
+            options.MapFrom(src => $"{src.PrimeiroNome} {src.UltimoNome}"))
+            .ReverseMap();
       });
     }
 
